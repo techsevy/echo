@@ -2,7 +2,7 @@ module.exports =
 {
 	ChangeColorRequest(intensity, fade, color ,callback){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
-	  	const https = require('https');
+	  	const http = require('http');
 		var options = {
 		  hostname: '208.102.106.59',
 		  port: 443,
@@ -10,7 +10,7 @@ module.exports =
 		  method: 'GET',
 		};
 
-		var req = https.request(options, function(res) {
+		var req = http.request(options, function(res) {
 			
 			var data = '';
 			res.on('data', function(d) {
